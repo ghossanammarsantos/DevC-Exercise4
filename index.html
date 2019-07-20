@@ -74,7 +74,7 @@
               </button>
             </div>
             <div class="modal-body">
-                    <form action="https://formspree.io/ghossansnts@gmail.com" method="POST">
+                    <form method="POST" id="form_contact">
                             <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
                               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -84,11 +84,10 @@
                               <label for="exampleInputPassword1">Message</label>
                               <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Message">
                             </div>
-                            <div class="form-check">
-                            <button type="submit" class="btn btn-primary">Submit</button>
                           </form>
-            </div>
-            <div class="modal-footer">
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
@@ -97,5 +96,12 @@
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+  $("#submit").click(function(){
+    var email = $("#exampleInputEmail1").val();
+    $("#form_contact").attr("action", "https://formspree.io/" + email);
+    $("#form_contact").submit()
+  })
+</script>
 </body>
 </html>
